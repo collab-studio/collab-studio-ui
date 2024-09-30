@@ -18,5 +18,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: 'Thanks for contributing!',
+              body: 'Thanks for contributing :blush:',
             });
