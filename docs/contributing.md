@@ -14,7 +14,7 @@ Make sure the branch / pr title starts with a sematic prefix:
 - build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
 - ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
 - chore: Other changes that don't modify src or test files
-- revert: Reverts a previous commit
+- revert: Reverts a previous committ
 
 ```text
 // branch names should follow as follows
