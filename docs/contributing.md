@@ -16,7 +16,7 @@ Make sure the branch / pr title starts with a sematic prefix:
 - chore: Other changes that don't modify src or test files
 - revert: Reverts a previous commit
 
-```text
+```texta
 // branch names should follow as follows
 {type}/{action suggesting your implementation}
 example:
