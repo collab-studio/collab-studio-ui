@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "next.config.mjs",
     "eslintrc.json",
-    "build/types/**/*.ts"
+    "build/types/**/*.ts",
+    "custom.d.ts"
   ],
   "exclude": ["node_modules"]
 }
