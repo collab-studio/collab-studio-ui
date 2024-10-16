@@ -1,5 +1,6 @@
 import Logo from "@/components/ui/Logo";
 import mainPageStyles from "./page.module.scss";
+import "./home.main.scss";
 
 export default function Home() {
   return (
