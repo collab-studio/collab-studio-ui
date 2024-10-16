@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import LogoImg from "../../public/favicon.ico";
+import LogoImg from "@/public/favicon.ico";
 
 export default function Logo() {
   return (
