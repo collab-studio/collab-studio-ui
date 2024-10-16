@@ -1,0 +1,30 @@
+/**
+ * helper function for checking if theme exists in theme colors
+ */
+@function color($colorName) {
+  @return map-get($colors, $colorName);
+}
+
+/**
+ * mixin to generate css variables from theme
+ */
+@mixin getVariablesFromTheme($theme) {
+  @each $key, $value in $theme {
+    --#{$key}-color: #{$value};
+  }
+}
+
+$colors: (
+  light_stale_blue: #a855f7,
+  medium_stale_blue: #6366f1,
+  tangaroa: #0f172b,
+  white: #ffffff,
+  black: #000000,
+);
+
+$home_main_theme: (
+  primary: color(light_stale_blue),
+  secondary: color(tangaroa),
+  background: color(tangaroa),
+  text: color(white),
+);
