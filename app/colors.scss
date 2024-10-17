@@ -20,11 +20,12 @@ $colors: (
   tangaroa: #0f172b,
   white: #ffffff,
   black: #000000,
+  very_light_grey: rgb(203, 213, 225),
 );
 
 $home_main_theme: (
   primary: color(light_stale_blue),
   secondary: color(tangaroa),
   background: color(tangaroa),
-  text: color(white),
+  text: color(very_light_grey),
 );

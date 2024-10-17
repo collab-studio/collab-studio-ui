@@ -1,12 +1,13 @@
-import Logo from "@/components/ui/Logo";
+import Header from "@/components/ui/Header/Header";
 import mainPageStyles from "./page.module.scss";
 import "./home.main.scss";
+import Hero from "@/components/Hero/Hero";
 
 export default function Home() {
   return (
     <main className={mainPageStyles.l_home_main}>
-      <Logo />
-      <h1>Collab-studio</h1>
+      <Header />
+      <Hero />
     </main>
   );
 }
