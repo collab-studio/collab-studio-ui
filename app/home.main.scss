@@ -2,4 +2,6 @@
 
 :root {
   @include getVariablesFromTheme($home_main_theme);
+  --home-max-width: 72rem;
+  --home-layout-sides-padding: 0 1.5rem;
 }

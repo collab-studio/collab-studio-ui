@@ -2,15 +2,16 @@
   width: 100%;
   position: absolute;
   top: 0;
+  z-index: 100;
 
   &__container {
-    max-width: 72rem;
+    max-width: var(--home-max-width);
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: auto;
     height: 5rem;
-    padding: 0 1.5rem;
+    padding: var(--home-layout-sides-padding);
   }
 }
 

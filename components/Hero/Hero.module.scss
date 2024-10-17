@@ -1,0 +1,24 @@
+.l_hero__container {
+  max-width: var(--home-max-width);
+  margin: auto;
+  padding: var(--home-layout-sides-padding);
+  position: relative;
+  height: 582px;
+}
+
+.l_hero__illustration_container {
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  margin-left: -7rem;
+  margin-right: -7rem;
+}
+
+.illustration_container {
+  transform: translate(-50%);
+  bottom: -4px;
+  left: 50%;
+  position: absolute;
+}
