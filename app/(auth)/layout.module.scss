@@ -1,0 +1,22 @@
+.l_auth__container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
+.auth__illustration {
+  position: absolute;
+  filter: blur(40px);
+  opacity: 0.7;
+  top: -7rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.l_auth__content {
+  display: grid;
+  place-content: center;
+}

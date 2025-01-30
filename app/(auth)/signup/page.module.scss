@@ -1,0 +1,149 @@
+@import "../../mixins";
+
+.l_signup__header {
+  display: grid;
+  place-items: center;
+}
+
+.l_signup__form {
+  @include flex-center;
+
+  &>div {
+    max-width: 24rem;
+    width: 100%;
+  }
+}
+
+.form__fields__container>div {
+  display: grid;
+  margin-bottom: 1rem;
+
+  & label {
+    @include small-font;
+    margin-bottom: 0.25rem;
+
+    &>span {
+      color: var(--red-color);
+    }
+  }
+
+  &>input {
+    @include small-font;
+    color: var(--text-color);
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.25rem;
+    background-color: rgb(30, 41, 59);
+    border-color: transparent;
+    border-width: 2px;
+    outline: none;
+  }
+
+  &>input:focus {
+    border-color: var(--primary-color);
+  }
+}
+
+.form__submit__container {
+  display: flex;
+  margin-top: 1.5rem;
+
+  &>button {
+    @include flex-center;
+    @include small-font;
+    width: 100%;
+    padding: 0.2rem 0;
+    border-radius: 9999px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-color: transparent;
+    border-width: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &>button:hover span {
+    transform: translate(0.125rem);
+    color: var(--white-color);
+  }
+
+  &>button:hover {
+    color: var(--white-color);
+  }
+
+  & span {
+    margin-left: 0.2rem;
+    transition: var(--arrow-transition);
+  }
+}
+
+.form__footer__already_signed_in {
+  @include small-font;
+  @include flex-center;
+  margin-top: 1rem;
+
+  &>a {
+    margin-left: 0.25rem;
+    color: var(--primary-color);
+    opacity: 0.75;
+  }
+
+  &>a:hover {
+    opacity: 1;
+  }
+}
+
+.form__divider {
+  @include flex-center;
+  margin: 1.5rem 0;
+  flex: 4 2 4;
+
+  &>div {
+    width: 100%;
+    border-top-width: 1px;
+    border: 0px solid rgb(100, 116, 139);
+    border-top-width: 1px;
+  }
+
+  &>span {
+    @include small-font;
+    padding: 0 0.5rem;
+    color: rgb(100, 116, 139)
+  }
+}
+
+.form__social__login {
+  @include flex-center;
+
+  &__item__container {
+    @include flex-center;
+    flex: 1;
+    position: relative;
+    background: var(--border_highlight_background-color);
+    padding: 0.4rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  &__item__container:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+
+  &__label {
+    @include sr-only;
+  }
+
+  & svg {
+    fill: var(--text-color);
+  }
+}
+
+.sigin__password__container {
+  display: flex;
+  justify-content: space-between;
+
+  &>a {
+    @include small-font;
+    color: var(--primary-color);
+  }
+}

@@ -10,7 +10,7 @@
  */
 @mixin getVariablesFromTheme($theme) {
   @each $key, $value in $theme {
-    --#{$key}-color: #{$value};
+    --#{$key}: #{$value};
   }
 }
 
@@ -21,11 +21,21 @@ $colors: (
   white: #ffffff,
   black: #000000,
   very_light_grey: rgb(203, 213, 225),
+  border_highlight_background: "linear-gradient(#0f172a, #0f172a) padding-box, \
+  conic-gradient(#94a3b8, #334155 25%, #334155 75%, #94a3b8 100%) border-box",
+  red: rgb(244, 63, 94)
 );
 
 $home_main_theme: (
-  primary: color(light_stale_blue),
-  secondary: color(tangaroa),
-  background: color(tangaroa),
-  text: color(very_light_grey),
+  primary-color: color(light_stale_blue),
+  secondary-color: color(tangaroa),
+  background-color: color(tangaroa),
+  text-color: color(very_light_grey),
+  border_highlight_background-color: color(border_highlight_background),
+  red-color: color(red),
+  white-color: color(white),
+  sm-font-size: 0.875rem,
+  sm-line-height: 1.5715,
+  sm-font-weight: 500,
+  arrow-transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1)
 );

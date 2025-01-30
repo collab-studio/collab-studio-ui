@@ -31,6 +31,30 @@ feat: user-authentication implementation using passkeys
 More detailed explanation on the implementation if necessary
 ```
 
+## Guide to Good Commit Message
+
+To create a useful revision history, teams should first agree on a commit message convention to use.
+
+Commit messages can adequately communicate why a change was made, and understanding that makes development and collaboration more efficient.
+
+the first line is the subject (short description), leave a blank line after it, and everything else is the extended description (body).
+
+```note
+<Summarize change(s) in around 50 characters or less>
+
+<More detailed explanatory description of the change wrapped into about 72 characters>
+```
+
+```note
+<type>: <description>
+
+[optional body]
+
+[optional footer]
+```
+
+![alt text](s3/det.png)
+
 Here's a great template of a good commit message originally written by [Tim pope](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 
 ```text
