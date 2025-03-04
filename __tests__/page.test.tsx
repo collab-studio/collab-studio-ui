@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { describe, expect } from "@jest/globals";
-import Page from "../app/page";
+import Page from "../src/app/page";
 
 describe("Page", () => {
   it("renders a heading", () => {

@@ -1,13 +1,35 @@
-export const metadata = {
-  title: "Sign Up - Collab Studio",
-  description: "Page description",
-};
+"use client";
 
 import Link from "next/link";
-import signupStyles from "./page.module.scss";
-import AuthLogo from "../auth-logo";
+import { useContext, useState } from "react";
+import Auth from "@/src/context/AuthContext";
+import AuthLogo from "@/src/components/AuthLogo/AuthLogo";
+import signupStyles from "./SignUp.module.scss";
+import withAuthProvider from "@/src/utils/withAuthProvier";
 
-export default function SignUp() {
+const { AuthContext } = Auth;
+
+function SignUpForm() {
+  const Auth = useContext(AuthContext);
+  const [signUpForm, setSignupForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleSignup = async () => {
+    if (!Auth) return;
+    try {
+      await Auth.register(
+        signUpForm.username,
+        signUpForm.email,
+        signUpForm.password,
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       {/* Page header */}
@@ -33,6 +55,9 @@ export default function SignUp() {
                   placeholder="Harry Potter"
                   name="name"
                   autoComplete="name"
+                  onChange={(e) =>
+                    setSignupForm({ ...signUpForm, username: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -46,6 +71,9 @@ export default function SignUp() {
                   name="email"
                   placeholder="potter@hogwards.com"
                   autoCapitalize="email"
+                  onChange={(e) =>
+                    setSignupForm({ ...signUpForm, email: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -58,12 +86,25 @@ export default function SignUp() {
                   type="password"
                   name="password"
                   autoComplete="new-password"
+                  onChange={(e) =>
+                    setSignupForm({ ...signUpForm, password: e.target.value })
+                  }
                   required
                 />
               </div>
             </div>
             <div className={signupStyles.form__submit__container}>
-              <button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  void handleSignup();
+                }}
+                disabled={
+                  !signUpForm.username ||
+                  !signUpForm.email ||
+                  !signUpForm.password
+                }
+              >
                 Sign Up <span> -&gt;</span>
               </button>
             </div>
@@ -84,10 +125,11 @@ export default function SignUp() {
           <div className={signupStyles.form__social__login}>
             <button
               className={signupStyles.form__social__login__item__container}
+              onClick={Auth?.googleLogin}
             >
               <span>
                 <span className={signupStyles.form__social__login__label}>
-                  Continue with Twitter
+                  Continue with Google
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -119,3 +161,5 @@ export default function SignUp() {
     </>
   );
 }
+
+export default withAuthProvider(SignUpForm);

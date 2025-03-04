@@ -1,4 +1,4 @@
-@import "../../mixins";
+@import "@/src/app/mixins.scss";
 
 .l_signup__header {
   display: grid;
@@ -68,6 +68,12 @@
 
   &>button:hover {
     color: var(--white-color);
+  }
+
+  &>button:disabled {
+    opacity: 0.5;
+    color: var(--text-color);
+    cursor: not-allowed;
   }
 
   & span {

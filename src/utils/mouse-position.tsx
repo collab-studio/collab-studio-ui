@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MousePosition } from "./common_types";
+import { MousePosition } from "../types/common_types";
 
 export default function useMousePosition(): MousePosition {
   const [mousePosition, setMousePosition] = useState<MousePosition>({

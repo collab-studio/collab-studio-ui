@@ -1,12 +1,7 @@
-export const metadata = {
-  title: "Reset Password - Stellar",
-  description: "Page description",
-};
+import AuthLogo from "../AuthLogo/AuthLogo";
+import resetpasswordStyles from "../SignUp/SignUp.module.scss";
 
-import AuthLogo from "../auth-logo";
-import resetpasswordStyles from "../signup/page.module.scss";
-
-export default function ResetPassword() {
+export default function ResetPasswordForm() {
   return (
     <>
       {/* Page header */}

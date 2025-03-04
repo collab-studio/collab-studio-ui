@@ -4,12 +4,12 @@ import "./globals.scss";
 import "./home.main.scss";
 
 const geistSans = localFont({
-  src: "../public/fonts/GeistVF.woff",
+  src: "../../public/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "../public/fonts/GeistMonoVF.woff",
+  src: "../../public/fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
@@ -42,6 +42,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} l_home_main`}
+        suppressHydrationWarning
       >
         {children}
       </body>

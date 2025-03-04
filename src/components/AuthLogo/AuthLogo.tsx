@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/favicon.ico";
-import logoStyles from "./auth-logo.module.scss";
+import logoStyles from "./AuthLogo.module.scss";
 
 export default function AuthLogo() {
   return (

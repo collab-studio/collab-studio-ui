@@ -1,13 +1,30 @@
-export const metadata = {
-  title: "Sign In - Collab Studio",
-  description: "Page description",
-};
+"use client";
 
 import Link from "next/link";
-import AuthLogo from "../auth-logo";
-import siginStyles from "../signup/page.module.scss";
+import siginStyles from "../SignUp/SignUp.module.scss";
+import AuthLogo from "../AuthLogo/AuthLogo";
+import { useContext, useState } from "react";
+import Auth from "@/src/context/AuthContext";
+import withAuthProvider from "@/src/utils/withAuthProvier";
 
-export default function SignIn() {
+const { AuthContext } = Auth;
+
+function SignInForm() {
+  const Auth = useContext(AuthContext);
+  const [signInForm, setsignInForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleSignup = async () => {
+    if (!Auth) return;
+    try {
+      await Auth.login(signInForm.email, signInForm.password);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       {/* Page header */}
@@ -30,6 +47,9 @@ export default function SignIn() {
                   type="email"
                   autoComplete="email"
                   name="email"
+                  onChange={(e) =>
+                    setsignInForm({ ...signInForm, email: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -43,12 +63,21 @@ export default function SignIn() {
                   type="password"
                   name="password"
                   autoComplete="current-password"
+                  onChange={(e) =>
+                    setsignInForm({ ...signInForm, password: e.target.value })
+                  }
                   required
                 />
               </div>
             </div>
             <div className={siginStyles.form__submit__container}>
-              <button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  void handleSignup();
+                }}
+                disabled={!signInForm.email || !signInForm.password}
+              >
                 Sign In <span> -&gt;</span>
               </button>
             </div>
@@ -75,10 +104,11 @@ export default function SignIn() {
           <div className={siginStyles.form__social__login}>
             <button
               className={siginStyles.form__social__login__item__container}
+              onClick={Auth?.googleLogin}
             >
               <span>
                 <span className={siginStyles.form__social__login__label}>
-                  Continue with Twitter
+                  Continue with Google
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,3 +140,5 @@ export default function SignIn() {
     </>
   );
 }
+
+export default withAuthProvider(SignInForm);

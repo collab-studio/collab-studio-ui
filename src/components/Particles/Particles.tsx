@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useRef, useEffect, useCallback } from "react";
-import GetMousePosition from "../utils/mouse-position";
-import { CanvasSize, Circle, MousePosition } from "../utils/common_types";
+import GetMousePosition from "../../utils/mouse-position";
+import { CanvasSize, Circle, MousePosition } from "../../types/common_types";
 import particleStyles from "./Particles.module.scss";
 
 interface ParticlesProps {
